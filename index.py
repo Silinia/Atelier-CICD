@@ -1,5 +1,21 @@
-import markdown
 import os
+import pandas as pd
+import markdown2
+
+DATA_DIR = "./"
+OUTPUT_DIR = "./public"
+os.makedirs(OUTPUT_DIR, exist_ok=True)
+
+membres = pd.read_csv(os.path.join(DATA_DIR, "membres-bureau-association.csv"))
+
+html = "<html><body><h1>Membres du Bureau</h1><ul>"
+for _, row in membres.iterrows():
+    html += f"<li>{row['Nom']} - {row['Rôle']}</li>"
+html += "</ul></body></html>"
+
+with open(os.path.join(OUTPUT_DIR, "index.html"), "w") as f:
+    f.write(html)
+
 
 rev = 0
 events = []
