@@ -24,7 +24,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install -r requirements.txt
+        pip install
 
     # 4. Générer les pages HTML
     - name: Generate HTML Pages
