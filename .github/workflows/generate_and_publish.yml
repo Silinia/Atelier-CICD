@@ -20,6 +20,9 @@ jobs:
       with:
         python-version: 3.9
 
+    - name: Set up requirements
+      run: pip install markdown
+
     # 4. Générer les pages HTML
     - name: Generate HTML Pages
       run: python index.py
