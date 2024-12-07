@@ -22,6 +22,7 @@ def prepare_pages():
             link = f'<img src="{os.path.join("events", file)}" alt="image">'
             image_to_write.append(link)
 
+    os.makedirs('Pages', exist_ok=True)
     os.makedirs('Pages/Events', exist_ok=True)
 
     with open('Pages/index.html', 'w+') as f:
